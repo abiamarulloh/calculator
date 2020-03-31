@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Simple Calculator</title>
+</head>
+
+<body class="bg-primary">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mx-auto my-5">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="text-center">Simple Calculator <br> By <a href="https://www.instagram.com/abiamarulloh/" class="text-dark font-weight-bolder">Abi Amarulloh</a></h5>
+                        <hr>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="bg-primary text-white">
+                                            Hasilnya :  <span id="result"></span>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="4">
+                                            <div class="form-group">
+                                                <input type="text" id="input_user_first" class="form-control" placeholder="Masukkan perhitungan Pertama">
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="4">
+                                            <div class="form-group">
+                                                <select class="form-control" id="selectorNumber">
+                                                    <option value="+">+</option>
+                                                    <option value="-">-</option>
+                                                    <option value="/">/</option>
+                                                    <option value="*">*</option>
+                                                    <option value="%">%</option>
+                                                </select>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="4">
+                                            <div class="form-group">
+                                                <input type="text" id="input_user_last" class="form-control" placeholder="Masukkan perhitungan Kedua">
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <button type="submit" name="btn-user" class="btn btn-primary btn-block btn-sm" onclick="btn_user()">Submit</button>
+                                        </th>
+                                      
+                                    </tr>
+                                </thead>
+                            </table>
+                          
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script>
+        function btn_user(){
+            //  Mengambil input user value 
+            var input_user_first = document.getElementById('input_user_first').value;
+            var input_user_last = document.getElementById('input_user_last').value;
+            var selectorNumber = document.getElementById('selectorNumber').value;
+
+            var result = ""; 
+            if(selectorNumber == "+") {
+                result =   parseInt(input_user_first) + parseInt(input_user_last) ;
+                document.getElementById("result").innerHTML = result;
+            }else if(selectorNumber == "-") {
+                result = parseInt(input_user_first) - parseInt(input_user_last);
+                document.getElementById("result").innerHTML = result;
+            }else if (selectorNumber == "/") {
+                result = parseInt(input_user_first) / parseInt(input_user_last);
+                document.getElementById("result").innerHTML = result;
+            } else if (selectorNumber == "*") {
+                result = parseInt(input_user_first) * parseInt(input_user_last);
+                document.getElementById("result").innerHTML = result;
+            } else if (selectorNumber == "%") {
+                result = parseInt(input_user_first) % parseInt(input_user_last);
+                document.getElementById("result").innerHTML = result;
+            }
+
+        }
+    </script>
+</body>
+
+</html>
